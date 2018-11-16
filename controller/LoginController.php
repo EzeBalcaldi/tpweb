@@ -37,7 +37,7 @@ class LoginController
           if (password_verify($pass, $dbUser[0]["contraseña"])){
               session_start();
               $_SESSION["User"] = $user;
-              if ($dbUser[0]["adm"]){
+              if ($dbUser[0]){
               header(ADM);
             }else{
               header(HOME);

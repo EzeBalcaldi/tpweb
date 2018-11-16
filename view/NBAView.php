@@ -61,8 +61,7 @@ class NBAView
     $smarty->display('templates/editarJugador.tpl');
 
   }
-  function MostrarJugador($Titulo ,$Jugador, $Equipo)
-  {
+  function MostrarJugador($Titulo ,$Jugador, $Equipo){
       $smarty = new Smarty();
       $smarty->assign('Titulo',$Titulo);
       $smarty->assign('Jugador',$Jugador);
@@ -75,8 +74,7 @@ class NBAView
       $smarty = new Smarty();
       $smarty->assign('Titulo',$Titulo);
       $smarty->assign('Jugadores',$Jugadores);
-      $smarty->display('templates/Jugadores.tpl');
+      $smarty->display('templates/verJugadores.tpl');
       $smarty->assign('home',"http://".$_SERVER["SERVER_NAME"] . dirname($_SERVER["PHP_SELF"]));
   }
 }
-    

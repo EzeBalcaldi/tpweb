@@ -35,7 +35,8 @@ class ConfigApp
       'verJugadores' => 'NBAController#verJugadores',
       'registro' => 'VisitanteController#registro',
       'agregarUsuario' => 'UsuarioController#agregar',
-      'jugadoresUsuario' => 'UsuarioController#jugadores'
+      'jugadoresUsuario' => 'UsuarioController#jugadores',
+      'verJugadorAdmin' => 'NBAController#VerJugador'
     ];
 }
  ?>

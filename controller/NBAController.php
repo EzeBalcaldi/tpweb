@@ -94,7 +94,8 @@
       $id_jugador = $param[0];
       $Jugador = $this->JugadoresModel->GetJugador($id_jugador);
       $id_equipo = $param[0];
-      $this->view->MostrarJugador("Jugador", $Jugador);
+      $Equipo = $this->EquiposModel->GetNombreEquipo($id_equipo);
+      $this->view->MostrarJugador("Jugador", $Jugador, $Equipo);
   }
     function verJugadores($param){
       $id_equipo = $param[0];

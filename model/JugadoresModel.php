@@ -46,8 +46,8 @@ class JugadoresModel
     $sentencia->execute(array($nombre_jugador, $procedencia, $id_jugador));
   }
   function GetJugadoresEquipo($id_equipo){
-    $sentencia = $this->db->prepare("select* from jugadores where id_equipo=?");
+    $sentencia = $this->db->prepare("select * from jugadores where id_equipo=?");
     $sentencia->execute(array($id_equipo));
-    return $sentencia->fetch(PDO::FETCH_ASSOC);
+    return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 }

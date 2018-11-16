@@ -13,6 +13,9 @@ class ConfigApi
       'jugador#DELETE' => 'jugadoresApiController#BorrarJugador',
       'jugador#POST' => 'jugadoresApiController#InsertarJugador',
       'jugador#PUT' => 'jugadoresApiController#UpdateJugador',
+      'comentario#GET' => 'comentariosApiController#GetComentarios',
+      'comentario#POST' => 'comentariosApiController#InsertarComentario',
+
     ];
 
 }

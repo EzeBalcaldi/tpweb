@@ -22,7 +22,7 @@
                   <th scope="col">{$jugador['nombre_equipo']}</th>
                   <th scope="col"> <a href="borrarJugador/{$jugador['id_jugador']}">BORRAR</th>
                   <th scope="col"> <a href="editarJugador/{$jugador['id_jugador']}">EDITAR</th>
-                  <th scope="col"> <a href="verJugador/{$jugador['id_jugador']}">VER MAS</th>
+                  <th scope="col"> <a href="verJugadorAdmin/{$jugador['id_jugador']}">VER MAS</th>
             </tr>
         {/foreach}
       </tbody>

@@ -1,4 +1,4 @@
-{include file="headertemporal.tpl"}
+{include file="headerTemporal.tpl"}
   <body>
   <div class="container-fluid">
     <table class="table table-hover">
@@ -22,6 +22,33 @@
             </tr>
       </tbody>
     </table>
+  </div>
+  <div class="comentarios">
+    <div class="container-fluid">
+      <br>
+      <br>
+      <h2>Comentario</h2>
+      <div class="">
+dasdasdasdasdasdasdasdas
+      </div>
+      <form method="post" action="InsertarComentario">
+        <div class="form-group">
+          <label for="comentarioForm">Comentario</label>
+          <input type="text" class="form-control" id="comentarioForm" name="comentarioForm">
+        </div>
+        <div class="form-group">
+          <label for="valoracionForm">Example select</label>
+          <select class="form-control" id="valoracionForm" name="valoracionForm">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+      </form>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
