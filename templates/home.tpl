@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <body>
 <div class="row">
-  <div class="col-12 col-sm-12 col-md-8 contenido">
+  <div class="col-12 col-sm-12 col-md-8 contenido" id="equipos-container">
     <br>
     <br>
     <article class="container-fluid">
@@ -23,5 +23,7 @@
     <br>
   </aside>
 </div>
-{include file='footer.tpl'}
+<script src="js/main.js"></script>
+<script src="js/handlebars-v4.0.12"></script>
 </body>
+{include file='footer.tpl'}

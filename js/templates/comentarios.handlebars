@@ -1,0 +1,13 @@
+<tbody class="contenedor-tabla" >
+  {{#each equipos}}
+    <tr>
+          <th scope="col">{{nombre_equipo}}</th>
+          <th scope="col">{{partidos_ganados}}</th>
+          <th scope="col">{{partidos_perdidos}}</th>
+          <th scope="col"> <a href="borrar/{{id_equipo}}">BORRAR</th>
+          <th scope="col"> <a href="editar/{{id_equipo}}">EDITAR</th>
+          <th scope="col"> <a href="verJugadores/{{id_equipo}}">VER JUGADORES</th>
+    </tr>
+    {{/each}}
+{/foreach}
+</tbody>

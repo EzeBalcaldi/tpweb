@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="headerTemporal.tpl"}
 <div class="container-fluid">
   <table class="table table-hover">
     <thead class="thead-dark">
@@ -6,7 +6,6 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Procedencia</th>
                 <th scope="col">Id jugador</th>
-                <th scope="col"> </th>
                 <th scope="col"> </th>
                 <th scope="col"> </th>
           </tr>
