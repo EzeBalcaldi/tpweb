@@ -27,10 +27,21 @@ class JugadoresModel
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+  function subirImagen($imagen){
+    $destino_final = 'imagenes/' . uniqid() . '.jpg';
+    echo "destino_final ". $destino_final;
+    move_uploaded_file($imagen, $destino_final);
+    return $destino_final;
+  }
 
-  function InsertarJugador($nombre_jugador, $procedencia, $id_equipo){
+  function InsertarJugador($nombre_jugador, $procedencia, $id_equipo, $tempPath){
     $sentencia = $this->db->prepare("INSERT INTO jugadores(nombre_jugador, procedencia, id_equipo) VALUES(?,?,?)");
     $sentencia->execute(array($nombre_jugador, $procedencia, $id_equipo));
+    $lastId = $this->db->lastInsertId();
+    for($i = 0; $i < 2; $i++){
+      $path = $this->subirImagen($tempPath[$i]);
+      $this->InsertarImagen($path, $lastId);
+    }
   }
   function BorrarJugador($id_jugador){
     $sentencia = $this->db->prepare( "delete from jugadores where id_jugador=?");
@@ -50,4 +61,13 @@ class JugadoresModel
     $sentencia->execute(array($id_equipo));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
+  function InsertarImagen($ruta, $id_jugador){
+    $sentencia = $this->db->prepare("INSERT INTO imagenes(ruta, id_jugador) VALUES(?,?)");
+    $sentencia->execute(array($ruta, $id_jugador));
+  }
+  function GetImagen($id_jugador){
+  $sentencia = $this->db->prepare("SELECT * FROM imagenes i, jugadores j WHERE i.id_jugador = j.id_jugador and j.id_jugador=?");
+  $sentencia->execute(array($id_jugador[0]));
+  return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+}
 }

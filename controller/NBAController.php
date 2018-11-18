@@ -48,7 +48,8 @@
       $nombre_jugador=$_POST["nombreForm"];
       $procedencia =$_POST["lugarForm"];
       $id_equipo =$_POST["idForm"];
-      $this->JugadoresModel->InsertarJugador($nombre_jugador, $procedencia, $id_equipo);
+      $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
+      $this->JugadoresModel->InsertarJugador($nombre_jugador, $procedencia, $id_equipo, $rutaTempImagenes);
       header(ADMJUG);
     }
     function BorrarEquipo($param){

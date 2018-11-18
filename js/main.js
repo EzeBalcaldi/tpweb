@@ -1,23 +1,27 @@
 'use strict';
-let templateEquipos;
-fetch('js/templates/comentarios.handlebars')
-.then(response => response.text())
-.then(text => {
-  let templateEquipos = Handlebars.compile(text);
-  getEquipos();
-})
-function getEquipos(){
-  fetch("api/equipo")
-  .then(response=> response.json())
-  .then(jsonEquipos => {
-    console.log(jsonEquipos);
-    //mostrarEquipos(jsonEquipos);
+let templateComentarios;
+document.querySelector("#cargarComentarios").addEventListener("click", cargarComentarios);
+
+function cargarComentarios(){
+  fetch('js/templates/comentarios.handlebars')
+  .then(response => response.text())
+  .then(template => {
+    let templateEquipos = Handlebars.compile(template);
+    getComentarios();
   })
 }
-function mostrarEquipos(){
+function getComentarios(){
+  fetch("api/comentarios")
+  .then(response=> response.json())
+  .then(jsonComentarios => {
+    console.log(jsonComentarios);
+    //mostrarComentarios(jsonComentarios);
+  })
+}
+function mostrarComentarios(){
   let context = {
-    equipos: jsonEquipos
+    comentarios: jsonComentarios
   }
-  let html = templateEquipos(context);
-  document.querySelector("#equipos-container").innerHTML = html;
+  let html = templateComentarios(context);
+  document.querySelector(".comentarios").innerHTML = html;
 }

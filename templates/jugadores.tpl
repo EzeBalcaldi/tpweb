@@ -47,6 +47,10 @@
         <label for="idForm">id equipo</label>
         <input type="text" class="form-control" id="idForm" name="idForm">
       </div>
+      <div class="form-group">
+        <label for="imagenes">Imagen</label>
+        <input type="file" id="imagenes" name="imagenes[]" multiple>
+      </div>
       <button type="submit" class="btn btn-primary">Agregar Jugador</button>
     </form>
   </div>

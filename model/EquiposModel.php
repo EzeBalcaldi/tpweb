@@ -1,7 +1,4 @@
 <?php
-/**
-*
-*/
 class EquiposModel
 {
   private $db;
@@ -9,6 +6,7 @@ class EquiposModel
   function __construct()
   {
     $this->db = $this->Connect();
+    $this->JugadoresModel = new JugadoresModel();
   }
 
   private function Connect()
@@ -27,6 +25,7 @@ class EquiposModel
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
   function InsertarEquipo($equipo, $p_ganados, $p_perdidos){
+    $path = $this->JugadoresModel->subirImagen($tempPath);
     $sentencia = $this->db->prepare("INSERT INTO equipos(nombre_equipo, partidos_ganados, partidos_perdidos) VALUES(?,?,?)");
     $sentencia->execute(array($equipo, $p_ganados, $p_perdidos));
     $lastId =  $this->db->lastInsertId();
