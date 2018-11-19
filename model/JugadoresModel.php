@@ -29,8 +29,11 @@ class JugadoresModel
   }
   function subirImagen($imagen){
     $destino_final = 'imagenes/' . uniqid() . '.jpg';
-    echo "destino_final ". $destino_final;
+    echo "destino_final: ".$destino_final;
+    var_dump($destino_final);
     move_uploaded_file($imagen, $destino_final);
+    var_dump($imagen);
+
     return $destino_final;
   }
 
@@ -38,10 +41,10 @@ class JugadoresModel
     $sentencia = $this->db->prepare("INSERT INTO jugadores(nombre_jugador, procedencia, id_equipo) VALUES(?,?,?)");
     $sentencia->execute(array($nombre_jugador, $procedencia, $id_equipo));
     $lastId = $this->db->lastInsertId();
-    for($i = 0; $i < 2; $i++){
+    for ($i = 0; $i < 1; $i++) {
       $path = $this->subirImagen($tempPath[$i]);
       $this->InsertarImagen($path, $lastId);
-    }
+}
   }
   function BorrarJugador($id_jugador){
     $sentencia = $this->db->prepare( "delete from jugadores where id_jugador=?");

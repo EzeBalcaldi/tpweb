@@ -22,6 +22,9 @@
       </tbody>
     </table>
   </div>
+  <div class="item active">
+  <img src="{$imagenes[0]['ruta']}">
+</div>
   <button type="button" name="button" id="cargarComentarios">Cargar Comentarios</button>
   <div class="comentarios">
     <div class="container-fluid">

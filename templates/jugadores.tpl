@@ -34,7 +34,7 @@
     <br>
     <br>
     <h2>Jugador</h2>
-    <form method="post" action="agregarJugador">
+    <form method="post" action="agregarJugador" enctype="multipart/form-data">
       <div class="form-group">
         <label for="nombreForm">Nombre Jugador</label>
         <input type="text" class="form-control" id="nombreForm" name="nombreForm">
