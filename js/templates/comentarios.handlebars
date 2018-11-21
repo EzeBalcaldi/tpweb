@@ -1,9 +1,23 @@
-<tbody class="contenedor-tabla" >
-  {{#each comentarios}}
-    <tr>
-          <th scope="col">{{comentario}}</th>
-          <th scope="col">{{valoracion}}</th>
-    </tr>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">texto</th>
+        <th scope="col">calificacion</th>
+        <th scope="col">id jugador</th>
+        <th scope="col">id comentario</th>
+      </tr>
+    </thead>
+    {{#each comentarios}}
+    <tbody>
+      <tr>
+        <td>{{comentario}}</td>
+        <td>{{valoracion}}</td>
+        <td>{{id_jugador}}</td>
+        <td id="id_comentario">{{id_comentario}}</td>
+
+        <td><button class="borrarcomentario" value="{{id_comentario}}" type="button" name="button">Borrar</button></td>
+
+      </tr>
+    </tbody>
     {{/each}}
-{/foreach}
-</tbody>
+  </table>

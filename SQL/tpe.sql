@@ -2,10 +2,10 @@
 -- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2018 a las 07:06:34
--- Versión del servidor: 10.1.32-MariaDB
--- Versión de PHP: 7.2.5
+-- Host: 127.0.0.1
+-- Generation Time: Nov 20, 2018 at 10:49 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tpe`
+-- Database: `tpe`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentarios`
+-- Table structure for table `comentarios`
 --
 
 CREATE TABLE `comentarios` (
@@ -36,17 +36,17 @@ CREATE TABLE `comentarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `comentarios`
+-- Dumping data for table `comentarios`
 --
 
 INSERT INTO `comentarios` (`comentario`, `id_jugador`, `id_comentario`, `valoracion`) VALUES
-('', 24, 1, 2),
-('asdasd', 6, 2, 5);
+('asdasd', 6, 2, 5),
+('caldito', 6, 3, 4);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `equipos`
+-- Table structure for table `equipos`
 --
 
 CREATE TABLE `equipos` (
@@ -57,20 +57,17 @@ CREATE TABLE `equipos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `equipos`
+-- Dumping data for table `equipos`
 --
 
 INSERT INTO `equipos` (`id_equipo`, `nombre_equipo`, `partidos_ganados`, `partidos_perdidos`) VALUES
 (23, 'boca', 50000000, 0),
-(25, 'riber', 0, 2147483647),
-(27, 'calditos', 55, 2),
-(30, 'calditos', 55, 999),
-(31, 'calditos', 2, 5);
+(25, 'riber', 0, 2147483647);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `imagenes`
+-- Table structure for table `imagenes`
 --
 
 CREATE TABLE `imagenes` (
@@ -79,10 +76,19 @@ CREATE TABLE `imagenes` (
   `id_imagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `imagenes`
+--
+
+INSERT INTO `imagenes` (`ruta`, `id_jugador`, `id_imagen`) VALUES
+('imagenes/5bf47ecb2c0bb.jpg', 6, 40),
+('imagenes/5bf480635011d.jpg', 66, 41),
+('imagenes/5bf480a71ad86.jpg', 68, 43);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `jugadores`
+-- Table structure for table `jugadores`
 --
 
 CREATE TABLE `jugadores` (
@@ -93,26 +99,20 @@ CREATE TABLE `jugadores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `jugadores`
+-- Dumping data for table `jugadores`
 --
 
 INSERT INTO `jugadores` (`id_jugador`, `nombre_jugador`, `procedencia`, `id_equipo`) VALUES
 (6, 'wanchope', 'argentina', 23),
 (7, 'baba', 'tandil', 23),
 (8, 'anyo', 'necochea', 23),
-(9, 'shroud', 'estados unidos', 25),
-(15, 'calditos', '333333', 23),
-(16, 'asd', 'sad', 23),
-(19, 'sadasdsa', '55', 23),
-(20, 'sda', 'dsd', 23),
-(22, 'Kappa', 'tandil', 23),
-(23, 'ddd', '2', 23),
-(24, 'Kappa', 'tandil', 23);
+(66, 'caldo', 'caldolandia', 23),
+(68, 'caldo', '223', 23);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -122,7 +122,7 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
@@ -134,94 +134,94 @@ INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
 (8, '333333333333', '$2y$10$wY7NMZSt91eHR0XrtyUSJ.IkbdyZPyilFrtdfLwRQgGAnP3n9iNDi');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `comentarios`
+-- Indexes for table `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD PRIMARY KEY (`id_comentario`),
   ADD KEY `id_jugador` (`id_jugador`);
 
 --
--- Indices de la tabla `equipos`
+-- Indexes for table `equipos`
 --
 ALTER TABLE `equipos`
   ADD PRIMARY KEY (`id_equipo`);
 
 --
--- Indices de la tabla `imagenes`
+-- Indexes for table `imagenes`
 --
 ALTER TABLE `imagenes`
   ADD PRIMARY KEY (`id_imagen`),
   ADD KEY `id_jugador` (`id_jugador`);
 
 --
--- Indices de la tabla `jugadores`
+-- Indexes for table `jugadores`
 --
 ALTER TABLE `jugadores`
   ADD PRIMARY KEY (`id_jugador`),
   ADD KEY `id_equipo` (`id_equipo`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `comentarios`
+-- AUTO_INCREMENT for table `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `equipos`
+-- AUTO_INCREMENT for table `equipos`
 --
 ALTER TABLE `equipos`
   MODIFY `id_equipo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT de la tabla `imagenes`
+-- AUTO_INCREMENT for table `imagenes`
 --
 ALTER TABLE `imagenes`
-  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_imagen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
--- AUTO_INCREMENT de la tabla `jugadores`
+-- AUTO_INCREMENT for table `jugadores`
 --
 ALTER TABLE `jugadores`
-  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_jugador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `comentarios`
+-- Constraints for table `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_jugador`) REFERENCES `jugadores` (`id_jugador`);
 
 --
--- Filtros para la tabla `imagenes`
+-- Constraints for table `imagenes`
 --
 ALTER TABLE `imagenes`
-  ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`id_jugador`) REFERENCES `comentarios` (`id_jugador`);
+  ADD CONSTRAINT `imagenes_ibfk_1` FOREIGN KEY (`id_jugador`) REFERENCES `jugadores` (`id_jugador`);
 
 --
--- Filtros para la tabla `jugadores`
+-- Constraints for table `jugadores`
 --
 ALTER TABLE `jugadores`
   ADD CONSTRAINT `jugadores_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id_equipo`);

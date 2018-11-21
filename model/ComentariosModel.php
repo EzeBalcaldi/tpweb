@@ -20,9 +20,13 @@ class ComentariosModel
   $sentencia->execute();
   return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 }
-function InsertarComentario($comentario, $calificacion){
-  $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario, calificacion) VALUES(?,?)");
-  $sentencia->execute(array($comentario, $calificacion));
+function InsertarComentario($comentario, $calificacion, $id_jugador){
+  $sentencia = $this->db->prepare("INSERT INTO comentarios(comentario, valoracion, id_jugador) VALUES(?,?, ?)");
+  $sentencia->execute(array($comentario, $calificacion, $id_jugador));
+}
+function BorrarComentario($id_comentario){
+  $sentencia = $this->db->prepare("delete from comentarios where id_comentario = ?");
+  $sentencia->execute(array($id_comentario));
 }
 }
  ?>

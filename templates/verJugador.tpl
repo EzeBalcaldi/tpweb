@@ -1,6 +1,7 @@
 {include file="headerTemporal.tpl"}
   <body>
   <div class="container-fluid">
+    <input type="hidden" name="" id= "id_jugador" value="{$Jugador['id_jugador']}">
     <table class="table table-hover">
       <thead class="thead-dark">
           <tr>
@@ -22,19 +23,17 @@
       </tbody>
     </table>
   </div>
-  <div class="item active">
-  <img src="{$imagenes[0]['ruta']}">
-</div>
-  <button type="button" name="button" id="cargarComentarios">Cargar Comentarios</button>
-  <div class="comentarios">
+  <div class="container-fluid">
+    {foreach from= $imagenes item=imagen}
+    <td><img src="{$imagen['ruta']}" alt="" height="100px"></td>
+    asd
+    {/foreach}
+  </div>
+  <button id="GetComentarios" type="button" name="button">Ver Comentarios</button>
+
     <div class="container-fluid">
-      <br>
-      <br>
       <h2>Comentario</h2>
-      <div class="">
-dasdasdasdasdasdasdasdas
-      </div>
-      <form method="post" action="InsertarComentario">
+      <form >
         <div class="form-group">
           <label for="comentarioForm">Comentario</label>
           <textarea class="form-control" id="comentarioForm" rows="5"></textarea>
@@ -42,21 +41,22 @@ dasdasdasdasdasdasdasdas
         <div class="form-group">
           <label for="valoracionForm">Example select</label>
           <select class="form-control" id="valoracionForm" name="valoracionForm">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary">Agregar Comentario</button>
+        <button value="{$Jugador['id_jugador']}" id="crearcomentario">Agregar Comentario</button>
       </form>
     </div>
+
+
+    <div class="comentarios" id="comentarios">
+
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-  <script src="js/main.js" charset="utf-8"></script>
+
 </body>
 </html>
 {include file='footer.tpl'}

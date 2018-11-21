@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="CSS/estilos.css" type="text/css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <base href="http://{$smarty.server.SERVER_NAME}{dirname($smarty.server.PHP_SELF)}/" target="">
+
   <title>{$Titulo}</title>
 </head>
   <header>
@@ -17,16 +19,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../home" id="botonHome">Home</a>
+          <a class="nav-link" href="home" id="botonHome">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../equipos" id="botonTabla">Regular Season</a>
+          <a class="nav-link" href="equipos" id="botonTabla">Regular Season</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../jugadores" id="botonLista">All-Star</a>
+          <a class="nav-link" href="jugadores" id="botonLista">All-Star</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../login" id="botonRegistro">Login</a>
+          <a class="nav-link" href="login" id="botonRegistro">Login</a>
         </li>
       </ul>
     </div>

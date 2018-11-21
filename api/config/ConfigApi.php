@@ -15,6 +15,8 @@ class ConfigApi
       'jugador#PUT' => 'jugadoresApiController#UpdateJugador',
       'comentario#GET' => 'comentariosApiController#GetComentarios',
       'comentario#POST' => 'comentariosApiController#InsertarComentario',
+      'comentario#DELETE' => 'comentariosApiController#BorrarComentario'
+
 
     ];
 

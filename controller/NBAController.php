@@ -49,7 +49,7 @@
       $procedencia =$_POST["lugarForm"];
       $id_equipo =$_POST["idForm"];
       $rutaTempImagenes = $_FILES['imagenes']['tmp_name'];
-      $this->JugadoresModel->InsertarJugador($nombre_jugador, $procedencia, $id_equipo, $rutaTempImagenes);
+      $this->JugadoresModel->InsertarJugador($nombre_jugador, $procedencia, $id_equipo, $rutaTempImagenes[0]);
     }
     function BorrarEquipo($param){
       $this->EquiposModel->BorrarEquipo($param[0]);
@@ -94,8 +94,9 @@
       $id_jugador = $param[0];
       $Jugador = $this->JugadoresModel->GetJugador($id_jugador);
       $id_equipo = $param[0];
+      $imagenes = $this->JugadoresModel->GetImagen($param[0]);
       $Equipo = $this->EquiposModel->GetNombreEquipo($id_equipo);
-      $this->view->MostrarJugador("Jugador", $Jugador, $Equipo);
+      $this->view->MostrarJugador("Jugador", $Jugador, $Equipo, $imagenes);
   }
     function verJugadores($param){
       $id_equipo = $param[0];

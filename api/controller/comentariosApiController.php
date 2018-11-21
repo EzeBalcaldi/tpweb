@@ -22,15 +22,20 @@ class comentariosApiController extends Api{
     }
 
   }
-  function InsertarComentario(){
-    $comentario=$_POST["comentarioForm"];
-    $valoracion=$_POST["valoracionForm"];
-    $this->model->InsertarComentario($comentario, $valoracion);
+  function InsertarComentario($param){
+    $id_jugador = $param[0];
+    $comentario = $this->getJSONData();
+    $r = $this->model->InsertarComentario($comentario->comentario, $comentario->valoracion, $id_jugador);
+    return $this->json_response($r, 200);
   }
-  //function InsertarComentario(){
-    //$comentario = $this->getJSONData();
-    //$r = $this->model->InsertarComentario($comentario->comentario, $comentario->valoracion, $comentario->id_jugador);
-    //return $this->json_response($r, 200);
-  //}
+  function BorrarComentario($param){
+    if(count($param)==1){
+      $id_comentario = $param[0];
+      $r= $this->model->BorrarComentario($id_comentario);
+      return $this->json_response("funciono", 200);
+    }else {
+      return $this->json_response(null, 404);
+    }
+  }
 }
 ?>
