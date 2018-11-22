@@ -27,18 +27,20 @@ class JugadoresModel
     $sentencia->execute();
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-  function subirImagen($imagen){
+  private function subirImagen($imagen){
     $destino_final = 'imagenes/' . uniqid() . '.jpg';
+    echo "destino_final: ".$destino_final;
     move_uploaded_file($imagen, $destino_final);
     return $destino_final;
-  }
+}
 
   function InsertarJugador($nombre_jugador, $procedencia, $id_equipo, $tempPath){
     $sentencia = $this->db->prepare("INSERT INTO jugadores(nombre_jugador, procedencia, id_equipo) VALUES(?,?,?)");
     $sentencia->execute(array($nombre_jugador, $procedencia, $id_equipo));
-    $lastId = $this->db->lastInsertId();
-    $path = $this->subirImagen($tempPath);
-    $this->InsertarImagen($path, $lastId);
+    $lastId =  $this->db->lastInsertId();
+    foreach ($tempPath as $img) {
+      $this->InsertarImagen($img,$lastId);
+    }
     header(ADMJUG);
 
 }
@@ -61,9 +63,10 @@ class JugadoresModel
     $sentencia->execute(array($id_equipo));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
-  function InsertarImagen($path, $id_jugador){
+  function InsertarImagen($img, $id_jugador){
+    $ruta = $this->subirImagen($img);
     $sentencia = $this->db->prepare("INSERT INTO imagenes(ruta, id_jugador) VALUES(?,?)");
-    $sentencia->execute(array($path, $id_jugador));
+    $sentencia->execute(array($ruta, $id_jugador));
   }
   function GetImagen($id_jugador){
   $sentencia = $this->db->prepare("select * from imagenes where id_jugador=?");
