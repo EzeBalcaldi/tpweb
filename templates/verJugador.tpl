@@ -1,4 +1,4 @@
-{include file="headerTemporal.tpl"}
+{include file="header.tpl"}
   <body>
   <div class="container-fluid">
     <input type="hidden" name="" id= "id_jugador" value="{$Jugador['id_jugador']}">
@@ -27,9 +27,6 @@
     </table>
   </div>
   <div class="container-fluid">
-    {foreach from= $imagenes item=imagen}
-    <td><img src="{$imagen['ruta']}" alt="" height="100px"></td>
-    {/foreach}
   </div>
   <button id="GetComentarios" type="button" name="button">Ver Comentarios</button>
 

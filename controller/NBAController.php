@@ -11,14 +11,14 @@
     private $Titulo = "NBA";
     private $Equipos;
     private $Jugadores;
+    private $ComentariosController;
 
     function __construct(){
       parent::__construct();
       $this->view = new NBAView();
       $this->EquiposModel = new EquiposModel();
       $this->JugadoresModel = new JugadoresModel();
-      $this->Titulo = "AdminNBA";
-    }
+      $this->Titulo = "AdminNBA";    }
 
     function Home(){
       $this->view->Home($this->Titulo);
