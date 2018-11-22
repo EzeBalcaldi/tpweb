@@ -12,7 +12,6 @@
                   {foreach from=$imagenes item=imagen}
                   <th scope="col">Imagen</th>
                   {/foreach}
-                  <th scope="col"> </th>
             </tr>
           </thead>
         <tbody class="contenedor-tabla" >
@@ -22,7 +21,7 @@
                   <th scope="col">{$Jugador['id_jugador']}</th>
                   <th scope="col">{$Jugador['nombre_equipo']}</th>
                   {foreach from= $imagenes item=imagen}
-                  <td><img src="{$imagen['ruta']}" alt="" height="100px" class=""></td>
+                  <td><img src="{$imagen['ruta']}" alt="" height="250em" width="" class=""></td>
                   {/foreach}
             </tr>
       </tbody>
@@ -30,17 +29,17 @@
   </div>
   <div class="container-fluid">
   </div>
-  <button id="GetComentarios" type="button" name="button">Ver Comentarios</button>
+  <button id="GetComentarios" type="button" name="button" class="btn btn-dark">Ver Comentarios</button>
 
     <div class="container-fluid">
-      <h2>Comentario</h2>
+      <h2>Comentarios</h2>
       <form >
         <div class="form-group">
           <label for="comentarioForm">Comentario</label>
           <textarea class="form-control" id="comentarioForm" rows="5"></textarea>
         </div>
         <div class="form-group">
-          <label for="valoracionForm">Example select</label>
+          <label for="valoracionForm">Valoración</label>
           <select class="form-control" id="valoracionForm" name="valoracionForm">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -49,7 +48,7 @@
             <option value="5">5</option>
           </select>
         </div>
-        <button value="{$Jugador['id_jugador']}" id="crearcomentario">Agregar Comentario</button>
+        <button value="{$Jugador['id_jugador']}" id="crearcomentario" class="btn btn-dark">Agregar Comentario</button>
       </form>
     </div>
 

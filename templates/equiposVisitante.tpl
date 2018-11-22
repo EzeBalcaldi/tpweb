@@ -15,6 +15,7 @@
                   <th scope="col">{$equipo['nombre_equipo']}</th>
                   <th scope="col">{$equipo['partidos_ganados']}</th>
                   <th scope="col">{$equipo['partidos_perdidos']}</th>
+                  
             </tr>
         {/foreach}
       </tbody>

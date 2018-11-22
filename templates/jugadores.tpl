@@ -49,9 +49,9 @@
       </div>
       <div class="form-group">
         <label for="imagenes">Imagen</label>
-        <input type="file" id="imagenes" name="imagenes[]" multiple>
+        <input type="file" id="imagenes" name="imagenes[]" class="" multiple>
       </div>
-      <button type="submit" class="btn btn-primary">Agregar Jugador</button>
+      <button type="submit" class="btn btn-dark">Agregar Jugador</button>
     </form>
   </div>
 <div class="container-fluid">
