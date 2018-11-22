@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2018 a las 07:11:49
+-- Tiempo de generación: 22-11-2018 a las 07:22:35
 -- Versión del servidor: 10.1.32-MariaDB
 -- Versión de PHP: 7.2.5
 
@@ -126,20 +126,17 @@ INSERT INTO `jugadores` (`id_jugador`, `nombre_jugador`, `procedencia`, `id_equi
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `usuario` varchar(40) NOT NULL,
-  `contraseña` varchar(250) NOT NULL
+  `contraseña` varchar(250) NOT NULL,
+  `admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`) VALUES
-(3, 'baba', '$2y$10$D/cClwQbtiCGEV6w/YNn..zvc9evBqhmYEno/eck1Z448b6EgQbIq'),
-(4, 'admin', '$2y$10$0Fn2qVa16cxyWfypv/9As.o58.utYFqMycpttuQDRqH570t.gPRNm'),
-(5, 'asdasdas', '$2y$10$Xzuyj30vw2pyLLEt3v5kme1f9LnzdniGr8R5ZkXjzLlQpAOHlUj4i'),
-(6, 'ddddddddddddddddddddddddd', '$2y$10$RB51C8T8hf1ckLk4vu2sj.0MX/rGWemdQnYCGc1EGp74f4zoP1e0.'),
-(7, 'ddd', '$2y$10$1JplAEjwWZj/WEZ4.bqKvuUrF/QGqjjj2lglZrPrgm9ZJHqrffpna'),
-(8, '333333333333', '$2y$10$wY7NMZSt91eHR0XrtyUSJ.IkbdyZPyilFrtdfLwRQgGAnP3n9iNDi');
+INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`, `admin`) VALUES
+(3, 'baba', '$2y$10$D/cClwQbtiCGEV6w/YNn..zvc9evBqhmYEno/eck1Z448b6EgQbIq', 1),
+(4, 'admin', '$2y$10$0Fn2qVa16cxyWfypv/9As.o58.utYFqMycpttuQDRqH570t.gPRNm', 1);
 
 --
 -- Índices para tablas volcadas
@@ -186,7 +183,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `equipos`
@@ -210,7 +207,7 @@ ALTER TABLE `jugadores`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
