@@ -25,9 +25,11 @@
     }
 
     function TablaEquipos(){
+      if($_SESSION['admin'] = 1){
       $Equipos = $this->EquiposModel->GetEquipos();
       $this->view->Tabla($this->Titulo, $Equipos);
     }
+  }
     function TablaJugadores(){
       $Jugadores = $this->JugadoresModel->GetJugadores();
       $this->view->Jugadores($this->Titulo, $Jugadores);

@@ -9,7 +9,7 @@
                   <th scope="col">Procedencia</th>
                   <th scope="col">Id jugador</th>
                   <th scope="col">Equipo </th>
-                  <th scope="col"> </th>
+                  <th scope="col"> Imagen </th>
                   <th scope="col"> </th>
             </tr>
           </thead>
@@ -19,6 +19,9 @@
                   <th scope="col">{$Jugador['procedencia']}</th>
                   <th scope="col">{$Jugador['id_jugador']}</th>
                   <th scope="col">{$Jugador['nombre_equipo']}</th>
+                  {foreach from= $imagenes item=imagen}
+                  <td><img src="{$imagen['ruta']}" alt="" height="100px"></td>
+                  {/foreach}
             </tr>
       </tbody>
     </table>
@@ -26,7 +29,6 @@
   <div class="container-fluid">
     {foreach from= $imagenes item=imagen}
     <td><img src="{$imagen['ruta']}" alt="" height="100px"></td>
-    asd
     {/foreach}
   </div>
   <button id="GetComentarios" type="button" name="button">Ver Comentarios</button>

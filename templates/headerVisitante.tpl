@@ -9,7 +9,7 @@
 </head>
   <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-    <img src="images/nba-logo.png" alt="" height="50px" class="foto">
+    <img src="imagenes/nba-logo.png" alt="" height="50px" class="foto">
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

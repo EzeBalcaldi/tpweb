@@ -44,6 +44,7 @@ class JugadoresModel
 }
   function BorrarJugador($id_jugador){
     $sentencia = $this->db->prepare( "delete from jugadores where id_jugador=?");
+    $this->BorrarImagen($id_jugador);
     $sentencia->execute(array($id_jugador));
   }
   function GetJugador($id){
@@ -66,7 +67,12 @@ class JugadoresModel
   }
   function GetImagen($id_jugador){
   $sentencia = $this->db->prepare("select * from imagenes where id_jugador=?");
-  $sentencia->execute(array($id_jugador[0]));
+  $sentencia->execute(array($id_jugador));
   return $sentencia->fetchAll(PDO::FETCH_ASSOC);
 }
+  function BorrarImagen($id_jugador){
+    $sentencia = $this->db->prepare( "delete from imagenes where id_jugador=?");
+    $sentencia->execute(array($id_jugador));
+  }
+
 }

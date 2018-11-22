@@ -1,7 +1,7 @@
 'use strict'
 let templateComentarios;
 let urlAPI = 'api/comentario';
-let botonGet = document.querySelector("#GetComentarios");
+let botonGet = document.querySelector("#GetComentarios")
 botonGet.addEventListener("click", cargarComentarios);
 
 
